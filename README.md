@@ -229,3 +229,9 @@ Other references.
 Noip
 ====
 http://www.noip.com/download?page=linux
+
+-----
+Thanks to Filipe, Mario and Agustín for the patience with all the questions :D
+ * https://github.com/fcvarela
+ * https://github.com/mjvm
+ * https://github.com/agustinventura 
