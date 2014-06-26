@@ -36,6 +36,9 @@ sudo rpi-update
 sudo vim.tiny /etc/network/interfaces
 sudo vim.tiny /etc/wpa_supplicant/wpa_supplicant.conf
 ```
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/network/interfaces
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/wpa_supplicant/wpa_supplicant.conf
+
 -----
 ##### Update and upgrade rasbian
 ```sh
@@ -57,11 +60,13 @@ We tell motion to work as a daemon
 sudo vim.tiny /etc/default/motion
 # we set start_motion_daemon=yes
 ``` 
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/default/motion
 -----
 Watch out for the default user and password for the web admin dashboard of motion, Change this in /etc/motion/motion.conf
 ```sh
 control_authentication username:password
 ```
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/motion/motion.conf
 -----
 ##### Add motion to startup
 Now for some reason there is (or was) a bug that made Motion to stop working short after launching it (a matter of seconds).
@@ -71,6 +76,7 @@ sudo vim.tiny /etc/rc.local
 # we add this line to rc.local
 # motion -c /etc/motion/motion.conf
 ``` 
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/rc.local
 
 If you don't have that issue and motion works as expected the standard way to launch motion at startup would be
 ```sh
@@ -96,6 +102,7 @@ On_picture_save dropbox_uploader.sh upload %f ./%F/%f
 on_movie_end dropbox_uploader.sh mkdir ./%F/
 on_movie_end dropbox_uploader.sh upload %f ./%F/%f
 ``` 
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/motion/motion.conf
 -----
 
 To avoid running out of space in tmp I set a cron task to delete everything in the motion tmp directory every five minutes
@@ -121,6 +128,7 @@ We just need to edit the default site so it's an authenticated proxy to the moti
 ```sh
 sudo vim.tiny /etc/nginx/sites-enabled/default
 ```
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/nginx/sites-enabled/default
 things to change
   * the port you want nginx to listen to
   * the default root settings (proxy and auth)
@@ -151,8 +159,9 @@ server {
     ...
 }
 ```
+* https://github.com/pepitoria/raspberry-motion/blob/master/etc/nginx/sites-enabled/default
 
-Forthe /etc/nginx/users you will need to add the users you want to have access by hand
+For the /etc/nginx/users you will need to add the users you want to have access by hand
 
 ```sh
 sudo vim.tiny /etc/nginx/users
