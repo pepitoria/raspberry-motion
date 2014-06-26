@@ -61,12 +61,14 @@ sudo vim.tiny /etc/default/motion
 # we set start_motion_daemon=yes
 ``` 
 * https://github.com/pepitoria/raspberry-motion/blob/master/etc/default/motion
+
 -----
 Watch out for the default user and password for the web admin dashboard of motion, Change this in /etc/motion/motion.conf
 ```sh
 control_authentication username:password
 ```
 * https://github.com/pepitoria/raspberry-motion/blob/master/etc/motion/motion.conf
+
 -----
 ##### Add motion to startup
 Now for some reason there is (or was) a bug that made Motion to stop working short after launching it (a matter of seconds).
@@ -103,6 +105,7 @@ on_movie_end dropbox_uploader.sh mkdir ./%F/
 on_movie_end dropbox_uploader.sh upload %f ./%F/%f
 ``` 
 * https://github.com/pepitoria/raspberry-motion/blob/master/etc/motion/motion.conf
+
 -----
 
 To avoid running out of space in tmp I set a cron task to delete everything in the motion tmp directory every five minutes
